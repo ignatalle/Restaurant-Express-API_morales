@@ -6,7 +6,7 @@
     "name": "Codebrahma"
   },
   "engines": {
-    "node": "16.x"
+    "node": "18.x"
   },
   "scripts": {
     "start": "./node_modules/.bin/cross-env NODE_ENV=development ./node_modules/.bin/nodemon server.js",
