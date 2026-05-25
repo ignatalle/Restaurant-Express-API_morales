@@ -14,6 +14,7 @@ var methodOverride = require('method-override');
 var csrf = require('csurf');
 
 var mongoStore = require('connect-mongo')(session);
+var mongoose = require('mongoose');
 var flash = require('connect-flash');
 var winston = require('winston');
 var helpers = require('view-helpers');
@@ -89,7 +90,7 @@ module.exports = function (app) {
     resave: true,
     saveUninitialized: true,
     store: new mongoStore({
-      url: config.db,
+      mongooseConnection: mongoose.connection,
       collection : 'sessions'
     })
   }));
